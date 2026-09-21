@@ -1,0 +1,14 @@
+ROUND 2 — ADDITIONAL MODEL ARTIFACTS
+
+The submitted .pkl files are the primary trained model artifacts.
+
+The fine-tuned MiniLM sentiment model artifacts (3 seeds) are available in the Round 2 GitHub repository:
+
+https://github.com/SaiGrover/entropy-data-vortex/tree/main/Round2-Semantic-Recovery/model
+
+Directories:
+- Entropy_minilm_sentiment_seed42
+- Entropy_minilm_sentiment_seed7
+- Entropy_minilm_sentiment_seed1234
+
+The GitHub repository also contains the complete inference configuration and supporting files required for reproducibility.

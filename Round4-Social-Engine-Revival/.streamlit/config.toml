@@ -1,0 +1,16 @@
+# Deep forest theme, pinned so the dashboard renders identically everywhere.
+[theme]
+base = "dark"
+primaryColor = "#7fb582"
+backgroundColor = "#0b120f"
+secondaryBackgroundColor = "#14201b"
+textColor = "#eef2ee"
+font = "sans serif"
+
+[server]
+headless = true
+# serves ./static so the background image can be referenced by URL
+enableStaticServing = true
+
+[browser]
+gatherUsageStats = false

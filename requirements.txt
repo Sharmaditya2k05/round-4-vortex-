@@ -1,0 +1,16 @@
+# Streamlit Community Cloud installs this file automatically.
+# The heavy optional extras (torch, transformers, sentence-transformers) are
+# deliberately left out: the dashboard detects their absence and turns the two
+# live scoring demos into a side note. Everything else is unaffected.
+# For the full local experience use Round4-Social-Engine-Revival/Entropy_requirements.txt
+
+streamlit>=1.49
+plotly>=5.22
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.5
+joblib>=1.4
+pypdfium2>=4.30
+groq>=0.11
+python-dotenv>=1.0

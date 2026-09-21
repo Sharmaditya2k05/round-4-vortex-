@@ -9,3 +9,6 @@ Round1-Phase2-Analytical-Core/*.py
 Round1-Phase1-Data-Recovery/*.tex
 Round1-Phase1-Data-Recovery/*.py
 Round2-Semantic-Recovery/*.tex
+
+# secrets - never commit
+.env

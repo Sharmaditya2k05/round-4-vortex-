@@ -1,0 +1,21 @@
+# Core - everything except the live scoring demos runs on these alone
+streamlit>=1.49          # width="stretch", st.popover, st.container(key=), segmented_control
+plotly>=5.22
+pandas>=2.0
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.5
+joblib>=1.4
+pypdfium2>=4.30          # renders the round reports page by page
+
+# SHANNON, the retrieval assistant. Needs GROQ_API_KEY in .env locally or in
+# st.secrets when deployed; without a key the dock explains how to add one.
+groq>=0.11
+python-dotenv>=1.0
+
+# Optional: the live scoring demos on Round 2 and Round 4 only. These are heavy
+# (torch alone is a few hundred MB) and the dashboard degrades gracefully
+# without them, so drop these three lines for a lean deploy.
+torch>=2.2
+transformers>=4.40
+sentence-transformers>=3.0

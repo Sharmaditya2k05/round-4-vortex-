@@ -10,7 +10,7 @@
 
 ## Competition Overview
 
-Data Vortex is a multi-round data science competition centered around recovering and analyzing a corrupted social media platform dataset ("The Social Engine"). Round 1 covers the recovery of the dataset and its analytical foundation in two phases: data cleaning with exploratory analysis, followed by SQL-based analytical reasoning. Round 2, "Semantic Recovery," moves from structured recovery to the platform's comprehension layer: recovering the sentiment and topic carried by its posts using NLP. Round 3, "Signal Tracking," takes the restored model live: collecting real public reaction to an assigned topic from public APIs and detecting behavioural shifts as they happen.
+Data Vortex is a multi-round data science competition centered around recovering and analyzing a corrupted social media platform dataset ("The Social Engine"). Round 1 covers the recovery of the dataset and its analytical foundation in two phases: data cleaning with exploratory analysis, followed by SQL-based analytical reasoning. Round 2, "Semantic Recovery," moves from structured recovery to the platform's comprehension layer: recovering the sentiment and topic carried by its posts using NLP. Round 3, "Signal Tracking," takes the restored model live: collecting real public reaction to an assigned topic from public APIs and detecting behavioural shifts as they happen. Round 4, "Social Engine Revival," brings every restored component together in an interactive dashboard.
 
 ## Dataset
 
@@ -122,6 +122,18 @@ Data Vortex/
 |   |   |-- Entropy_r3_common.tex                 # shared LaTeX preamble
 |   |-- Entropy_README_Round3.md
 |
+|-- Round4-Social-Engine-Revival/     # Interactive dashboard integrating all rounds
+|   |-- Entropy_app.py                          # Streamlit + Plotly dashboard (5 pages, live artefact reads)
+|   |-- Entropy_post_fetcher.py                 # resolves a public post URL to its text
+|   |-- Entropy_rag.py                          # retrieval index + Groq call behind SHANNON
+|   |-- Entropy_requirements.txt                # full set, including the optional model extras
+|   |-- .streamlit/config.toml                  # pinned deep-forest theme
+|   |-- .env.example                            # copy to .env and add GROQ_API_KEY
+|   |-- static/Entropy_bg.webp                  # background artwork (served at app/static/)
+|   |-- Entropy_README_Round4.md
+|
+|-- requirements.txt                  # lean set Streamlit Community Cloud installs
+|-- .streamlit/config.toml            # same theme, at the root so Cloud picks it up
 |-- README.md                         # This file
 ```
 
@@ -145,6 +157,12 @@ Data Vortex/
 | Round | Status | Description |
 |-------|--------|-------------|
 | Round 3 - Signal Tracking | Completed | Key-less collector for 4 public platforms (Reddit Atom, HN Algolia, Mastodon, Lemmy) + news timeline, two snapshots, Round 2 model applied unchanged and validated in-domain on 150 hand-labelled posts, 3 significant sentiment shifts, 44 spike hours, entity/theme/NMF topic analysis, trigger table evidenced by news and named posts, Analytical Report PDF |
+
+### Round 4
+
+| Round | Status | Description |
+|-------|--------|-------------|
+| Round 4 - Social Engine Revival | Completed | Deep-forest Streamlit + Plotly dashboard, ~34 charts across 5 pages, navigated by a pinned clickable flowchart of the four-round pipeline whose last node is the dashboard itself; KPI tiles on every page and a vertical methodology flowchart with a live artefact panel after each round's analysis, a platform filter, a time-window slider, the Round 1b SQL run live against the database, the Round 2 ensemble loaded for on-demand inference, the Round 3 live corpus re-binned, a live operating-point slider that re-decides all 1,403 posts from saved probabilities, bootstrap intervals on the sentiment timeline, a filterable evidence table of the scored corpus, four cross-round journey charts (scale per round, every model built against its live score, a Lorenz curve of synthetic vs live engagement, training balance vs the live world), every chart paired with an interpretation and a "why it matters" note, each round's submitted report PDFs plus its executed notebook (code, outputs and figures) rendered at the end of its own page, a live predictor that scores typed text or any public post URL, and **SHANNON**, a retrieval-augmented assistant answering questions from the repository itself |
 
 ## Key Findings
 
